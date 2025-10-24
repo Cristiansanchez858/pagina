@@ -1,0 +1,59 @@
+/* Style the header */
+#header
+{
+    text-align:center;
+    background-color: #8abf24;
+    padding: 10px;
+}
+
+/* Style the navigation bar */
+.navBar
+{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #2596be;
+}
+
+/* Style links in navigation bar */
+.navBar li a
+{
+    display: block;
+    color: #f1f1f1;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.navBar li a:hover
+{
+    background-color: #dddddd;
+    color: black;
+}
+
+/* Style main container */
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-container > div
+{
+    margin: 10px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #f1f1f1;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Use media query and show the flex items vertically if screen width is less than 600px */
+@media screen and (max-width:600px) {
+    .flex-container
+    {
+        flex-direction: column;
+    }
+}
