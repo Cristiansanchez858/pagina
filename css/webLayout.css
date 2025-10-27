@@ -16,14 +16,14 @@
     background-color: #2596be;
 }
 
-/* Style links in navigation bar */
-.navBar li a
+/* Style li.navBar li a
 {
     display: block;
     color: #f1f1f1;
     padding: 14px 16px;
     text-decoration: none;
 }
+nks in navigation bar */
 
 /* Change color on hover */
 .navBar li a:hover
