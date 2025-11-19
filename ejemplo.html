@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página HTML5 completa demostrando todos los elementos disponibles">
+    <meta name="keywords" content="HTML5, elementos, tutorial, ejemplo completo">
+    <meta name="author" content="Mar - UTEQ">
+    
+    <!-- Título de la página -->
+    <title>Demostración Completa de HTML5 - Todos los Elementos</title>
+    
+    <!-- Estilos CSS internos -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        /* Navegación */
+        nav {
+            background-color: #4a5568;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #667eea;
+        }
+        
+        /* Main content */
+        main {
+            padding: 30px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        section h3 {
+            color: #4a5568;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* Aside */
+        aside {
+            background: #edf2f7;
+            padding: 20px;
+            margin: 20px 30px;
+            border-radius: 8px;
+            border: 2px dashed #cbd5e0;
+        }
+        
+        aside h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        
+        /* Formularios */
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        fieldset {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        legend {
+            color: #667eea;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="search"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        button,
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px 0 0;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover,
+        input[type="submit"]:hover {
+            background-color: #5a67d8;
+        }
+        
+        input[type="reset"] {
+            background-color: #718096;
+        }
+        
+        input[type="reset"]:hover {
+            background-color: #4a5568;
+        }
+        
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        caption {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 15px;
+            color: #2d3748;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        tbody tr:hover {
+            background-color: #f7fafc;
+        }
+        
+        tfoot {
+            background-color: #edf2f7;
+            font-weight: bold;
+        }
+        
+        /* Multimedia */
+        figure {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        figcaption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #718096;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        audio,
+        video {
+            width: 100%;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        /* Canvas y SVG */
+        canvas {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            display: block;
+            margin: 20px auto;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        svg {
+            display: block;
+            margin: 20px auto;
+        }
+        
+        /* Elementos interactivos */
+        details {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #667eea;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        summary:hover {
+            background-color: #f7fafc;
+        }
+        
+        details[open] summary {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        progress,
+        meter {
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+        }
+        
+        /* Dialog */
+        dialog {
+            border: none;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 500px;
+        }
+        
+        dialog::backdrop {
+            background: rgba(0,0,0,0.5);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+        }
+        
+        /* Estilos para formato de texto */
+        .text-examples {
+            line-height: 2;
+        }
+        
+        mark {
+            background-color: #fef08a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        code {
+            background-color: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #e53e3e;
+        }
+        
+        kbd {
+            background-color: #2d3748;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        blockquote {
+            border-left: 4px solid #667eea;
+            padding-left: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #4a5568;
+            background: #f7fafc;
+            padding: 15px 15px 15px 20px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* Listas */
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        dl {
+            margin: 15px 0;
+        }
+        
+        dt {
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 10px;
+        }
+        
+        dd {
+            margin-left: 20px;
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            main {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER - Encabezado de la página -->
+        <header>
+            <h1>🚀 Demostración Completa de HTML5</h1>
+            <p>Una página que incluye <strong>TODOS</strong> los elementos de HTML5</p>
+        </header>
+
+        <!-- NAV - Navegación principal -->
+        <nav>
+            <ul>
+                <li><a href="#encabezados">Encabezados</a></li>
+                <li><a href="#texto">Texto</a></li>
+                <li><a href="#listas">Listas</a></li>
+                <li><a href="#formularios">Formularios</a></li>
+                <li><a href="#multimedia">Multimedia</a></li>
+                <li><a href="#tablas">Tablas</a></li>
+                <li><a href="#interactivos">Interactivos</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN - Contenido principal -->
+        <main>
+            <!-- ARTICLE - Artículo independiente -->
+            <article>
+                <header>
+                    <h2>Artículo Principal: Todo sobre HTML5</h2>
+                    <p>
+                        <time datetime="2025-10-27">Publicado: 27 de octubre de 2025</time> |
+                        <address style="display: inline;">Por: <a href="mailto:mar@uteq.edu.mx">Mar - UTEQ</a></address>
+                    </p>
+                </header>
+
+                <!-- SECTION 1: Encabezados -->
+                <section id="encabezados">
+                    <h2>1. Encabezados (H1-H6)</h2>
+                    <h1>Encabezado H1 - Título Principal</h1>
+                    <h2>Encabezado H2 - Subtítulo</h2>
+                    <h3>Encabezado H3 - Sección</h3>
+                    <h4>Encabezado H4 - Subsección</h4>
+                    <h5>Encabezado H5 - Detalle</h5>
+                    <h6>Encabezado H6 - Mínimo nivel</h6>
+                    <hr>
+                </section>
+
+                <!-- SECTION 2: Elementos de texto -->
+                <section id="texto">
+                    <h2>2. Elementos de Formato de Texto</h2>
+                    
+                    <div class="text-examples">
+                        <p>Este es un <strong>párrafo normal</strong> con diferentes tipos de formato:</p>
+                        
+                        <p>
+                            <strong>Texto importante (strong)</strong><br>
+                            <em>Texto con énfasis (em)</em><br>
+                            <b>Texto en negrita (b)</b><br>
+                            <i>Texto en cursiva (i)</i><br>
+                            <u>Texto subrayado (u)</u><br>
+                            <s>Texto tachado (s)</s><br>
+                            <mark>Texto marcado/resaltado (mark)</mark><br>
+                            <small>Texto pequeño (small)</small><br>
+                            Texto normal con <sub>subíndice (sub)</sub><br>
+                            Texto normal con <sup>superíndice (sup)</sup>
+                        </p>
+
+                        <p>
+                            Fórmula química: H<sub>2</sub>O<br>
+                            Fórmula matemática: E = mc<sup>2</sup>
+                        </p>
+
+                        <p>
+                            Código en línea: <code>console.log("Hola mundo");</code><br>
+                            Entrada de teclado: Presiona <kbd>Ctrl</kbd> + <kbd>C</kbd><br>
+                            Variable: <var>x</var> + <var>y</var> = <var>z</var><br>
+                            Salida: <samp>Error 404: Página no encontrada</samp>
+                        </p>
+
+                        <p>
+                            Cita en línea: Como dijo Steve Jobs, <q>La innovación distingue a un líder de un seguidor</q>.
+                        </p>
+
+                        <p>
+                            Abreviatura: <abbr title="HyperText Markup Language">HTML</abbr> es el lenguaje de marcado estándar.
+                        </p>
+
+                        <blockquote cite="https://ejemplo.com">
+                            <p>Esta es una cita en bloque (blockquote). Se usa para citas largas que provienen de otra fuente. El atributo cite puede referenciar la fuente original.</p>
+                            <footer>— Autor Desconocido</footer>
+                        </blockquote>
+
+                        <pre>
+Este es texto preformateado (pre)
+    Respeta los    espacios
+        y los saltos de línea
+            tal como se escriben
+        </pre>
+
+                        <p contenteditable="true" style="border: 2px dashed #cbd5e0; padding: 10px; background: #f7fafc;">
+                            ✏️ Este párrafo es editable (contenteditable). ¡Haz clic y escribe algo!
+                        </p>
+                    </div>
+                </section>
+
+                <!-- SECTION 3: Listas -->
+                <section id="listas">
+                    <h2>3. Listas</h2>
+                    
+                    <h3>Lista Desordenada (UL)</h3>
+                    <ul>
+                        <li>Primer elemento de lista desordenada</li>
+                        <li>Segundo elemento</li>
+                        <li>Tercer elemento con sublista:
+                            <ul>
+                                <li>Subelemento 1</li>
+                                <li>Subelemento 2</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>Lista Ordenada (OL)</h3>
+                    <ol>
+                        <li>Primer elemento de lista ordenada</li>
+                        <li>Segundo elemento</li>
+                        <li>Tercer elemento con sublista:
+                            <ol>
+                                <li>Subelemento 1</li>
+                                <li>Subelemento 2</li>
+                            </ol>
+                        </li>
+                    </ol>
+
+                    <h3>Lista de Definiciones (DL)</h3>
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>HyperText Markup Language - Lenguaje de marcado para crear páginas web</dd>
+                        
+                        <dt>CSS</dt>
+                        <dd>Cascading Style Sheets - Lenguaje para dar estilo a páginas web</dd>
+                        
+                        <dt>JavaScript</dt>
+                        <dd>Lenguaje de programación para añadir interactividad a las páginas web</dd>
+                    </dl>
+                </section>
+
+                <!-- SECTION 4: Enlaces -->
+                <section id="enlaces">
+                    <h2>4. Enlaces (A)</h2>
+                    <p>
+                        <a href="https://www.ejemplo.com" target="_blank">Enlace externo (se abre en nueva pestaña)</a><br>
+                        <a href="#encabezados">Enlace interno (ancla a sección)</a><br>
+                        <a href="mailto:ejemplo@correo.com">Enlace de email</a><br>
+                        <a href="tel:+524421234567">Enlace de teléfono</a><br>
+                        <a href="#" download>Enlace de descarga</a>
+                    </p>
+                </section>
+
+                <!-- SECTION 5: Formularios -->
+                <section id="formularios">
+                    <h2>5. Formularios Completos</h2>
+                    
+                    <form action="#" method="POST">
+                        <fieldset>
+                            <legend>📝 Información Personal</legend>
+                            
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+                            <label for="password">Contraseña:</label>
+                            <input type="password" id="password" name="password" required>
+
+                            <label for="edad">Edad:</label>
+                            <input type="number" id="edad" name="edad" min="0" max="120" value="25">
+
+                            <label for="fecha">Fecha de nacimiento:</label>
+                            <input type="date" id="fecha" name="fecha">
+
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+52 442 123 4567">
+
+                            <label for="website">Sitio web:</label>
+                            <input type="url" id="website" name="website" placeholder="https://ejemplo.com">
+
+                            <label for="busqueda">Búsqueda:</label>
+                            <input type="search" id="busqueda" name="busqueda" placeholder="Buscar...">
+
+                            <label for="color">Color favorito:</label>
+                            <input type="color" id="color" name="color" value="#667eea">
+
+                            <label for="rango">Nivel de experiencia (1-10):</label>
+                            <input type="range" id="rango" name="rango" min="1" max="10" value="5">
+                            <output for="rango"></output>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>🎓 Información Académica</legend>
+                            
+                            <label for="universidad">Universidad:</label>
+                            <input list="universidades" id="universidad" name="universidad" placeholder="Selecciona o escribe">
+                            <datalist id="universidades">
+                                <option value="UTEQ">
+                                <option value="UAQ">
+                                <option value="UNAM">
+                                <option value="IPN">
+                                <option value="ITESM">
+                            </datalist>
+
+                            <label for="carrera">Carrera:</label>
+                            <select id="carrera" name="carrera">
+                                <option value="">Selecciona una carrera</option>
+                                <option value="idgs">Ingeniería en Desarrollo y Gestión de Software</option>
+                                <option value="sistemas">Ingeniería en Sistemas</option>
+                                <option value="computacion">Ingeniería en Computación</option>
+                                <option value="ti">Tecnologías de la Información</option>
+                            </select>
+
+                            <label>Género:</label>
+                            <input type="radio" id="masculino" name="genero" value="m">
+                            <label for="masculino" style="display: inline; font-weight: normal;">Masculino</label>
+                            
+                            <input type="radio" id="femenino" name="genero" value="f">
+                            <label for="femenino" style="display: inline; font-weight: normal;">Femenino</label>
+                            
+                            <input type="radio" id="otro" name="genero" value="otro">
+                            <label for="otro" style="display: inline; font-weight: normal;">Otro</label>
+
+                            <br><br>
+                            <label>Tecnologías que conoces:</label>
+                            <input type="checkbox" id="html" name="tecnologias" value="html" checked>
+                            <label for="html" style="display: inline; font-weight: normal;">HTML</label>
+                            
+                            <input type="checkbox" id="css" name="tecnologias" value="css">
+                            <label for="css" style="display: inline; font-weight: normal;">CSS</label>
+                            
+                            <input type="checkbox" id="js" name="tecnologias" value="js">
+                            <label for="js" style="display: inline; font-weight: normal;">JavaScript</label>
+                            
+                            <input type="checkbox" id="react" name="tecnologias" value="react">
+                            <label for="react" style="display: inline; font-weight: normal;">React</label>
+                            
+                            <input type="checkbox" id="node" name="tecnologias" value="node">
+                            <label for="node" style="display: inline; font-weight: normal;">Node.js</label>
+
+                            <label for="archivo">Subir CV (PDF):</label>
+                            <input type="file" id="archivo" name="archivo" accept=".pdf,.doc,.docx">
+
+                            <label for="comentarios">Comentarios adicionales:</label>
+                            <textarea id="comentarios" name="comentarios" rows="5" placeholder="Escribe tus comentarios aquí..."></textarea>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>✅ Términos y Condiciones</legend>
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos" style="display: inline; font-weight: normal;">
+                                Acepto los términos y condiciones
+                            </label>
+                        </fieldset>
+
+                        <div>
+                            <input type="submit" value="Enviar Formulario">
+                            <input type="reset" value="Limpiar Formulario">
+                            <button type="button" onclick="alert('Botón clickeado!')">Botón Simple</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- SECTION 6: Multimedia -->
+                <section id="multimedia">
+                    <h2>6. Elementos Multimedia</h2>
+                    
+                    <h3>Imagen con Figure y Figcaption</h3>
+                    <figure>
+                        <img src="https://via.placeholder.com/600x300/667eea/ffffff?text=Imagen+de+Ejemplo" 
+                             alt="Imagen de demostración" 
+                             width="600" 
+                             height="300"
+                             loading="lazy">
+                        <figcaption>Figura 1: Esta es una imagen de ejemplo con figura y leyenda</figcaption>
+                    </figure>
+
+                    <h3>Audio</h3>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento audio.
+                    </audio>
+
+                    <h3>Video</h3>
+                    <video width="100%" height="400" controls poster="https://via.placeholder.com/600x400/764ba2/ffffff?text=Video">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento video.
+                    </video>
+
+                    <h3>Canvas (Dibujo con JavaScript)</h3>
+                    <canvas id="miCanvas" width="600" height="200"></canvas>
+
+                    <h3>SVG (Gráficos Vectoriales)</h3>
+                    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="300" height="200" fill="#667eea" rx="10"/>
+                        <circle cx="150" cy="100" r="60" fill="#764ba2"/>
+                        <text x="150" y="110" font-size="20" fill="white" text-anchor="middle">SVG</text>
+                    </svg>
+
+                    <h3>IFrame (Contenido Embebido)</h3>
+                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-100.39%2C20.58%2C-100.38%2C20.59&layer=mapnik" 
+                            width="100%" 
+                            height="300" 
+                            style="border: 1px solid #cbd5e0; border-radius: 8px;"
+                            title="Mapa de Querétaro">
+                    </iframe>
+                </section>
+
+                <!-- SECTION 7: Tablas -->
+                <section id="tablas">
+                    <h2>7. Tablas Completas</h2>
+                    
+                    <table>
+                        <caption>Tabla 1: Estudiantes de IDGS en UTEQ</caption>
+                        <colgroup>
+                            <col style="background-color: #f7fafc;">
+                            <col span="2" style="background-color: white;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Matrícula</th>
+                                <th>Calificación</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ana García</td>
+                                <td>2021001</td>
+                                <td>95</td>
+                                <td>Aprobado</td>
+                            </tr>
+                            <tr>
+                                <td>Carlos López</td>
+                                <td>2021002</td>
+                                <td>88</td>
+                                <td>Aprobado</td>
+                            </tr>
+                            <tr>
+                                <td>María Rodríguez</td>
+                                <td>2021003</td>
+                                <td>92</td>
+                                <td>Aprobado</td>
+                            </tr>
+                            <tr>
+                                <td>Juan Martínez</td>
+                                <td>2021004</td>
+                                <td>78</td>
+                                <td>Aprobado</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><strong>Promedio General</strong></td>
+                                <td colspan="2"><strong>88.25</strong></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Total de estudiantes: 4</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <h3>Tabla con rowspan y colspan</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Encabezado 1</th>
+                                <th>Encabezado 2</th>
+                                <th>Encabezado 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">Celda con rowspan=2</td>
+                                <td>Celda normal</td>
+                                <td>Celda normal</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">Celda con colspan=2</td>
+                            </tr>
+                            <tr>
+                                <td>Celda normal</td>
+                                <td>Celda normal</td>
+                                <td>Celda normal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- SECTION 8: Elementos Interactivos -->
+                <section id="interactivos">
+                    <h2>8. Elementos Interactivos</h2>
+                    
+                    <h3>Details y Summary (Acordeón)</h3>
+                    <details>
+                        <summary>¿Qué es HTML5?</summary>
+                        <p>HTML5 es la quinta versión del lenguaje de marcado HTML. Introduce nuevas etiquetas semánticas, APIs para multimedia, gráficos, y almacenamiento local, mejorando significativamente las capacidades de desarrollo web.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Qué es CSS3?</summary>
+                        <p>CSS3 es la última evolución de las Hojas de Estilo en Cascada. Añade características como animaciones, transiciones, gradientes, transformaciones y diseño responsive con flexbox y grid.</p>
+                    </details>
+
+                    <details open>
+                        <summary>¿Qué es JavaScript?</summary>
+                        <p>JavaScript es un lenguaje de programación que permite crear contenido dinámico en páginas web. Es fundamental para el desarrollo web moderno y se ejecuta en el navegador del cliente.</p>
+                    </details>
+
+                    <h3>Progress (Barra de Progreso)</h3>
+                    <label for="progreso1">Progreso del curso:</label>
+                    <progress id="progreso1" value="70" max="100">70%</progress> 70%
+                    <br><br>
+                    <label for="progreso2">Proyecto completado:</label>
+                    <progress id="progreso2" value="45" max="100">45%</progress> 45%
+
+                    <h3>Meter (Medidor)</h3>
+                    <label for="medidor1">Uso de CPU:</label>
+                    <meter id="medidor1" value="0.6" min="0" max="1" low="0.3" high="0.7" optimum="0.5">60%</meter>
+                    <br><br>
+                    <label for="medidor2">Espacio en disco:</label>
+                    <meter id="medidor2" value="80" min="0" max="100" low="20" high="80" optimum="50">80 GB</meter>
+                    <br><br>
+                    <label for="medidor3">Satisfacción del cliente:</label>
+                    <meter id="medidor3" value="9" min="0" max="10" low="3" high="7" optimum="10">9/10</meter>
+
+                    <h3>Dialog (Cuadro de Diálogo)</h3>
+                    <button onclick="document.getElementById('miDialogo').showModal()">
+                        Abrir Diálogo Modal
+                    </button>
+                    
+                    <dialog id="miDialogo">
+                        <h3>Diálogo de Ejemplo</h3>
+                        <p>Este es un cuadro de diálogo modal creado con el elemento <code>&lt;dialog&gt;</code>.</p>
+                        <p>Los diálogos modales bloquean la interacción con el resto de la página hasta que se cierran.</p>
+                        <form method="dialog">
+                            <button type="submit">Cerrar</button>
+                        </form>
+                    </dialog>
+                </section>
+
+                <!-- SECTION 9: Caracteres Especiales -->
+                <section>
+                    <h2>9. Entidades HTML (Caracteres Especiales)</h2>
+                    <p>
+                        &lt; (menor que) &nbsp; 
+                        &gt; (mayor que) &nbsp; 
+                        &amp; (ampersand) &nbsp; 
+                        &quot; (comillas dobles) &nbsp; 
+                        &apos; (comillas simples)
+                    </p>
+                    <p>
+                        &copy; (copyright) &nbsp; 
+                        &reg; (registrado) &nbsp; 
+                        &trade; (trademark) &nbsp; 
+                        &euro; (euro) &nbsp; 
+                        &pound; (libra) &nbsp; 
+                        &yen; (yen)
+                    </p>
+                    <p>
+                        &hearts; (corazón) &nbsp; 
+                        &spades; (picas) &nbsp; 
+                        &clubs; (tréboles) &nbsp; 
+                        &diams; (diamantes)
+                    </p>
+                    <p>
+                        &larr; (flecha izquierda) &nbsp; 
+                        &uarr; (flecha arriba) &nbsp; 
+                        &rarr; (flecha derecha) &nbsp; 
+                        &darr; (flecha abajo)
+                    </p>
+                </section>
+
+                <footer>
+                    <p><em>Fin del artículo principal</em></p>
+                </footer>
+            </article>
+
+            <!-- ASIDE - Contenido relacionado -->
+            <aside>
+                <h3>📚 Recursos Adicionales</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/es/docs/Web/HTML">MDN Web Docs - HTML</a></li>
+                    <li><a href="https://www.w3schools.com/html/">W3Schools - HTML Tutorial</a></li>
+                    <li><a href="https://validator.w3.org/">W3C HTML Validator</a></li>
+                    <li><a href="https://caniuse.com/">Can I Use - Compatibilidad</a></li>
+                </ul>
+
+                <h3>💡 Dato Curioso</h3>
+                <p>
+                    HTML5 fue finalizado y estandarizado el 28 de octubre de 2014. Fue un proyecto conjunto entre el W3C y el WHATWG (Web Hypertext Application Technology Working Group).
+                </p>
+            </aside>
+        </main>
+
+        <!-- FOOTER - Pie de página -->
+        <footer>
+            <p>&copy; 2025 Demostración HTML5 - Todos los derechos reservados</p>
+            <p>
+                Creado por: <strong>Mar - UTEQ</strong> | 
+                Carrera: <abbr title="Ingeniería en Desarrollo y Gestión de Software">IDGS</abbr>
+            </p>
+            <address>
+                <p>
+                    Contacto: <a href="mailto:contacto@ejemplo.com">contacto@ejemplo.com</a> |
+                    Teléfono: <a href="tel:+524421234567">+52 442 123 4567</a>
+                </p>
+            </address>
+            <p>
+                <small>
+                    Universidad Tecnológica de Querétaro - Arroyo Seco, Querétaro, México
+                </small>
+            </p>
+        </footer>
+    </div>
+
+    <!-- SCRIPT - JavaScript para interactividad -->
+    <script>
+        // Dibujar en Canvas
+        const canvas = document.getElementById('miCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Degradado
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+        gradient.addColorStop(0, '#667eea');
+        gradient.addColorStop(1, '#764ba2');
+        
+        // Fondo con degradado
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Círculo
+        ctx.beginPath();
+        ctx.arc(150, 100, 60, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fill();
+        ctx.strokeStyle = '#4a5568';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        
+        // Texto
+        ctx.fillStyle = '#2d3748';
+        ctx.font = 'bold 24px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('Canvas HTML5', 150, 110);
+        
+        // Rectángulo
+        ctx.fillStyle = '#fbbf24';
+        ctx.fillRect(250, 40, 150, 120);
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 4;
+        ctx.strokeRect(250, 40, 150, 120);
+        
+        // Triángulo
+        ctx.beginPath();
+        ctx.moveTo(500, 150);
+        ctx.lineTo(450, 50);
+        ctx.lineTo(550, 50);
+        ctx.closePath();
+        ctx.fillStyle = '#10b981';
+        ctx.fill();
+        ctx.strokeStyle = '#059669';
+        ctx.lineWidth = 3;
+        ctx.stroke();
+
+        // Actualizar output del rango
+        const rangeInput = document.getElementById('rango');
+        const output = document.querySelector('output[for="rango"]');
+        
+        rangeInput.addEventListener('input', function() {
+            output.textContent = this.value;
+        });
+        output.textContent = rangeInput.value;
+
+        // Log al cargar la página
+        console.log('🚀 Página HTML5 completa cargada exitosamente!');
+        console.log('📚 Esta página incluye TODOS los elementos de HTML5');
+        
+        // Alerta al usuario
+        console.log('%c¡Bienvenido a la demostración completa de HTML5!', 'color: #667eea; font-size: 20px; font-weight: bold;');
+    </script>
+</body>
+</html>
